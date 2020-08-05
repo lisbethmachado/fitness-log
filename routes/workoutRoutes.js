@@ -5,4 +5,6 @@ router.get('/workouts', (request, response) => {
   Workout.find()
   .then( workouts => response.json(workouts))
   .catch( error => console.error(error))
-})
+});
+
+module.exports = router
