@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(join(__dirname, 'public')))
 
+app.use(require('./routes'));
 
 app.get('/', (request, response) => {
   response.sendFile(join(__dirname, 'public', 'index.html'))
