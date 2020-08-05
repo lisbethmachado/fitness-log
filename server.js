@@ -1,6 +1,7 @@
 const express = require("express");
-const {join} = require('path')
+const {join} = require("path")
 const mongoose = require("mongoose");
+const apiRouter = requre("./routes/workoutRoutes")
 
 
 const PORT = process.env.PORT || 3000;
@@ -16,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(join(__dirname, 'public')))
 
-app.use(require('./routes'));
+app.use(apiRouter);
 
 app.get('/', (request, response) => {
   response.sendFile(join(__dirname, 'public', 'index.html'))
