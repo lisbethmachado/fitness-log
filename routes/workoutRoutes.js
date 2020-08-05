@@ -15,11 +15,11 @@ router.get('/api/workouts', function (request, response) {
   //.catch( error => console.error(error))
 });
 
-// router.post('/api/workouts', (request, response) => {
-//   db.Workout.create(request.body)
-//   .then( () => response.sendStatus(200))
-//   .catch( error => console.error(error))
-// });
+router.post('/api/workouts', (request, response) => {
+  db.Workout.create(request.body)
+  .then( () => response.sendStatus(200))
+  .catch( error => console.error(error))
+});
 
 // router.put('/api/workouts/:id', (request, response) => {
 //     db.Workout.findOneAndUpdate({_id: request.params.id}, request.body)
