@@ -1,8 +1,9 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const Workout = require('../models');
 
 router.get('/workouts', (request, response) => {
-  Workout.filter()
+  Workout.findAll()
   .then( workouts => response.json(workouts))
   .catch( error => console.error(error))
 });
