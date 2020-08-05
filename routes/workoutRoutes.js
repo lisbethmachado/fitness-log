@@ -2,7 +2,7 @@ const router = require('express').Router();
 const db = require('../models');
 
 router.get('/api/workouts', (request, response) => {
-  db.Workout.findAll()
+  db.Workout.find.sort({ day: 1 })(request.body)
   .then( workouts => response.json(workouts))
   .catch( error => console.error(error))
 });
@@ -26,4 +26,4 @@ router.put('/api/workouts/:id', (request, response) => {
     .catch(error => response.sendStatus(400))
   });
 
-module.exports = router
+module.exports = router;
