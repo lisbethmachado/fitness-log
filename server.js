@@ -1,7 +1,7 @@
 const express = require("express");
 const {join} = require("path")
 const mongoose = require("mongoose");
-const apiRouter = requre("./routes/workoutRoutes")
+const apiRouter = require("./routes/workoutRoutes")
 
 
 const PORT = process.env.PORT || 3000;
