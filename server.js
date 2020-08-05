@@ -14,8 +14,7 @@ mongoose.connect(MONGODB_URI, {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.use(express.static("public"));
+app.use(express.static(join(__dirname, 'public')))
 
 
 app.get('/', (request, response) => {
