@@ -1,5 +1,5 @@
 const express = require("express");
-const morgan = require("morgan")
+const {join} = require('path')
 const mongoose = require("mongoose");
 
 
@@ -18,12 +18,16 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-app.get("/exercise", (req, res) => {
-  res.sendFile(__dirname, "/exercise.html");
+app.get('/', (request, response) => {
+  response.sendFile(join(__dirname, 'public', 'index.html'))
 });
 
-app.get("/stats", (req, res) => {
-  res.sendFile(__dirname, "public/stats.html");
+app.get('/exercise', (request, response) => {
+  response.sendFile(join(__dirname, 'public', 'exercise.html'))
+});
+
+app.get('/stats', (request, response) => {
+  response.sendFile(join(__dirname, 'public', 'stats.html'))
 });
 
 app.listen(PORT, () => {
